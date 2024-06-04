@@ -1,7 +1,7 @@
 import "./Home.scss";
 const Home = () => {
     return (
-        <div>Home page at</div>
+        <div className="home">Home page at</div>
     );
 };
 
