@@ -1,6 +1,6 @@
 import "./Newsletter.scss";
 const Newsletter = () => {
-    return <div>Newsletter</div>;
+    return <h1>Newsletter component</h1>;
 };
 
 export default Newsletter;
