@@ -6,15 +6,17 @@ import {TbSearch} from "react-icons/tb"
 import {CgShoppingCart} from "react-icons/cg"
 import {AiOutlineHeart} from "react-icons/ai"
 
-import Search from "./Search/Search"
+
 import { Context } from "../../utils/Context";
 import Cart from "../Cart/Cart";
+import Search from "./Search/Search";
 
 
 const Header = () => {
 
     const [scroll, setScroll] = useState(false)
     const [showCart, setShowCart] = useState(false)
+    const [showSearch, setShowSearch] = useState(false)
 
     const handleScroll = () => {
         const offset = window.scrollY;
@@ -43,7 +45,7 @@ const Header = () => {
                         </ul>
                         <div className="center">ShopKaro</div>
                         <div className="right">
-                            <TbSearch />
+                            <TbSearch  onClick={() => setShowSearch(true)}/>
                             <AiOutlineHeart />
                             <span className="cart-icon">
                                 <CgShoppingCart onClick={() => setShowCart(true)}/>
@@ -53,6 +55,7 @@ const Header = () => {
                     </div>
                 </header>
                 {showCart && <Cart setShowCart={setShowCart}/>}
+                {showSearch && <Search  setShowSearch={setShowSearch}/>}
         </>
     );
 };
